@@ -8,14 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Mini_Project
-<<<<<<< HEAD
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\
-=======
-build_property.ProjectDir = C:\Users\Lenovo\Documents\School\Jaar 1\Project B\Mini_Project\
->>>>>>> d978ee5451356eeb71be6f71645e3f78e8d52d19
-=======
 build_property.ProjectDir = C:\Users\31653\Desktop\ProjectB_mini\Mini_Project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
->>>>>>> bd669d5c74ceca2b2a810352a174701b2abbadff
