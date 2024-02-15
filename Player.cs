@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public class Player
 {
     public int CurrentHitPoints;
@@ -6,6 +8,9 @@ public class Player
     public int MaximumHitPoints;
     public string Name;
     public int Gold = 0;
+
+    public List<Item> itemInventory = new List<Item>();
+    public List<Weapon> weaponInventory = new();
 
     public Player(string name, int currenthp, int maxhp, Weapon? weapon, Location? location)
     {

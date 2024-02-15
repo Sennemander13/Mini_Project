@@ -7,8 +7,14 @@ public static class World
     public static readonly List<Location> Locations = new List<Location>();
     public static readonly Random RandomGenerator = new Random();
 
+    public const int NPC_ID_FLY = 1;
+    public const int NPC_ID_FARMER = 2;
+    public const int NPC_ID_ALCHEMIST = 3;
+    public const int ITEM_ID_TEST = 0;
+    public const int WEAPON_ID_TEST = 0;
     public const int WEAPON_ID_RUSTY_SWORD = 1;
     public const int WEAPON_ID_CLUB = 2;
+    public const int WEAPON_ID_SOLARFLARE = 13;
 
     public const int MONSTER_ID_RAT = 1;
     public const int MONSTER_ID_SNAKE = 2;
@@ -65,7 +71,9 @@ public static class World
             new Quest(
                 QUEST_ID_CLEAR_ALCHEMIST_GARDEN,
                 "Clear the alchemist's garden",
-                "Kill rats in the alchemist's garden ");
+                "Kill rats in the alchemist's garden ",
+                new Item(ITEM_ID_TEST,"TEST",100,false),
+                new Npc(NPC_ID_ALCHEMIST,"Alfie the Alchemist", "Part of the shadow wizzard money gang", "These Rats in my garden are snatching my crystals"));
 
 
 
@@ -73,14 +81,18 @@ public static class World
             new Quest(
                 QUEST_ID_CLEAR_FARMERS_FIELD,
                 "Clear the farmer's field",
-                "Kill snakes in the farmer's field");
+                "Kill snakes in the farmer's field",
+                new Item(ITEM_ID_TEST,"TEST",100,false),
+                new Npc(NPC_ID_FARMER, "Old Jo", "Old but hard working lady", "Its been a while since there where snakes on these farms\nIm statrting to get worried."));
 
 
         Quest clearSpidersForest =
-                    new Quest(
-                        QUEST_ID_COLLECT_SPIDER_SILK,
-                        "Collect spider silk",
-                        "Kill spiders in the spider forest");
+            new Quest(
+                QUEST_ID_COLLECT_SPIDER_SILK,
+                "Collect spider silk",
+                "Kill spiders in the spider forest",
+                new Item(ITEM_ID_TEST,"TEST",100,false),
+                new Npc(NPC_ID_FLY, "Local fly", "Small and scared little being", "Help, can you please clear the webs for me so that i can live here?"));
 
 
         Quests.Add(clearAlchemistGarden);
