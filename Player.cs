@@ -74,6 +74,7 @@ public class Player
         int originalMxHP = MaximumHitPoints;
         if (CurrentExp >= ExpNeeded)
         {
+            Console.WriteLine("--------------------------------------------------------------------");
             Console.Write($"Level increased\n{Level}");
             Level++;
             Console.WriteLine($"->{Level}");
@@ -106,7 +107,7 @@ public class Player
                 }
                 
             }while (levelUpPoints != 0);
-
+            Console.WriteLine("--------------------------------------------------------------------");
             Console.WriteLine($"You have invested {BaseDamage-originalBaseDamage} in Base Damage ({originalBaseDamage}->{BaseDamage})");
             Console.WriteLine($"You have Invested {MaximumHitPoints-originalMxHP} in MaxHP ({originalMxHP}->{MaximumHitPoints})");
             ExpNeeded = ExpNeeded*2;
@@ -126,6 +127,8 @@ public class Player
 
     public void stats()
     {
+        Console.Clear();
+        Console.WriteLine("--------------------------------------------------------------------");
         Console.WriteLine($"\nName: {Name} Level: {Level}\nEXP {CurrentExp} out of {ExpNeeded}");
         Console.WriteLine($"Base Damage: {BaseDamage} Max Damage: {BaseDamage + CurrentWeapon.MaxDamage}");
         Console.WriteLine($"Health: {CurrentHitPoints} out of {MaximumHitPoints}");
@@ -136,6 +139,7 @@ public class Player
 
     public void Bag()
     {
+        Console.WriteLine("--------------------------------------------------------------------");
         Console.WriteLine("Options: items or weapons\nesc: leave bag");
         string wich_inventory = "";
         while (wich_inventory != "esc")

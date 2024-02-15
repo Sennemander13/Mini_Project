@@ -7,8 +7,9 @@ public class Monster
     public int MaximumHitPoints;
     public string Name;
     public int Gold;
+    public List<Item> Droplist;
     public int ExpDrop;
-    public Monster(int id, string name, int damage, int currenthp, int maxhp, int gold, int expDrop)
+    public Monster(int id, string name, int damage, int currenthp, int maxhp, int gold, int expDrop, List<Item> itemlist)
     {
         ID = id;
         Name = name;
@@ -17,5 +18,21 @@ public class Monster
         MaximumHitPoints = maxhp;
         Gold = gold;
         ExpDrop = expDrop;
+        Droplist = itemlist;
+    }
+
+    public Item? DropRandomOnDeath()
+    {
+        Random rng = new();
+        
+        if (Droplist.Count != 0)
+        {
+            int randomNumber = rng.Next(0,Droplist.Count);
+            return Droplist[randomNumber];
+        }
+        else{
+            Console.WriteLine("Nothing Left");
+            return null;
+        }
     }
 }

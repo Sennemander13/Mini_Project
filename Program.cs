@@ -5,6 +5,8 @@
         Player p1 = new("Senne", 100, 100, 0, World.WeaponByID(1), World.LocationByID(1));
         while (p1.CurrentLocation?.ID != 10)
         {
+            Console.Clear();
+            Console.WriteLine("--------------------------------------------------------------------");
             Console.WriteLine($"\n{p1.CurrentLocation?.Name}: {p1.CurrentLocation?.Description}");
             if (p1.CurrentLocation?.QuestAvailableHere != null)
             {
@@ -17,8 +19,11 @@
             Console.WriteLine(options);
             Console.Write("Choice: ");
             string choice = Console.ReadLine()!.ToLower();
+            // Console.WriteLine("--------------------------------------------------------------------");
+
             if (choice == "move" || choice == "m")
             {
+                Console.WriteLine("--------------------------------------------------------------------");
                 p1.CurrentLocation?.Info();
                 Console.Write("Cardinal: ");
                 string move = Console.ReadLine()!.ToLower();
