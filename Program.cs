@@ -12,8 +12,8 @@
             }
             string options = $"Options:\nesc: pause/quit game\nbag: open bag\nMove: move to other location\nStats: see player stats";
             options += p1.CurrentLocation?.QuestAvailableHere!=null?"\nTalk: Talk to Person":"";
-            options += p1.CurrentLocation?.MonsterLivingHere!=null?$"\nExtra: fight: fight {p1.CurrentLocation?.MonsterLivingHere.Name}":"";
-            options += p1.CurrentLocation?.ID == 1 ? "\nExtra : Heal: Heal to full hp":"";
+            options += p1.CurrentLocation?.MonsterLivingHere!=null?$"\n: fight: fight {p1.CurrentLocation?.MonsterLivingHere.Name}":"";
+            options += p1.CurrentLocation?.ID == 1 ? "\nHeal: Heal to full hp":"";
             Console.WriteLine(options);
             Console.Write("Choice: ");
             string choice = Console.ReadLine()!.ToLower();
