@@ -2,7 +2,18 @@
 {
     static void Main(string[] args)
     {
-        Player p1 = new("Senne", 100, 100, 0, World.WeaponByID(1), World.LocationByID(1));
+        // Player p1 = new("Senne", 100, 100, 0, World.WeaponByID(1), World.LocationByID(1));
+        
+        string startorquit = "";
+        do
+        {
+            startorquit = Menu();
+            if (startorquit == "quit" || startorquit == "q"){return;}
+            else if (startorquit == "start" || startorquit == "s"){break;}
+        }while(startorquit != "start");
+
+        Player p1 = CreateCharacter();
+
         while (p1.CurrentLocation?.ID != 10)
         {
             Console.Clear();
@@ -56,6 +67,43 @@
                 break;
             }
         }
+
+    }
+
+    static string Menu()
+    {
+        
+        Console.Clear();
+        Console.WriteLine("--------------------------------------------------------------------");
+        Console.WriteLine("                       Welcome To Craft Mine");
+        Console.WriteLine("\n\n         Start                                 Quit");
+        Console.Write("\n                         Choice: ");
+        return Console.ReadLine()!.ToLower();
+        // return startorquit;
+    }
+
+    static Player? CreateCharacter()
+    {
+        //add classes
+        Console.Clear();
+        Console.WriteLine("--------------------------------------------------------------------");
+        Console.WriteLine("                      Create Character");
+        Console.Write("     Name: ");
+        string playerName = Console.ReadLine()!;
+        // Console.WriteLine();
+        int HP = 20;
+        Console.Write($"\n     Hp = {HP}");
+        int BaseDamage = 5;
+        Console.Write($"\n     Base Damage = {BaseDamage}");
+        Weapon starterWeapon = World.WeaponByID(1);
+        Console.Write($"\n     Starter Weapon = {starterWeapon.Name}");
+        Location starterLocation = World.LocationByID(1);
+        Console.Write($"\n     Starter Location = {starterLocation.Name}");
+
+        
+        Console.Write("\nPress Enter");
+        Console.ReadLine();
+        return new Player(playerName,HP,HP,BaseDamage,starterWeapon,starterLocation);
 
     }
 }

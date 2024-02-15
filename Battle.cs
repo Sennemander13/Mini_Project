@@ -48,6 +48,7 @@ public class Battle
         if (Player.CurrentHitPoints <= 0)
         {
             // and take a item from its inventory and put it in theirs 
+            Item taken = Player.DropRandomOnDeath();
             Console.WriteLine($"\nYou died fighting {Monster.Name}");//\nIt has taken {item}");
             Player.Respawn();
         }

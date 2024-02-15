@@ -161,4 +161,18 @@ public class Player
             }
         }
     }
+    public Item? DropRandomOnDeath()
+    {
+        Random rng = new();
+        
+        if (itemInventory.Count != 0)
+        {
+            int randomNumber = rng.Next(0,itemInventory.Count);
+            return itemInventory[randomNumber];
+        }
+        else{
+            Console.WriteLine("Nothing Left");
+            return null;
+        }
+    }
 }
