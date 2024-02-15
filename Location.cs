@@ -5,18 +5,22 @@ public class Location
     public string? Description;
     public Quest? QuestAvailableHere;
     public Monster? MonsterLivingHere;
+    public List<Item> ItemShop;
+    public List<Weapon> WeaponShop;
     public Location? LocationToNorth;
     public Location? LocationToEast;
     public Location? LocationToSouth;
     public Location? LocationToWest;
 
-    public Location(int id, string name, string description, Quest? quest, Monster? monster)
+    public Location(int id, string name, string description, Quest? quest, Monster? monster, List<Item> itemList, List<Weapon> weaponList)
     {
         ID = id;
         Name = name;
         Description = description;
         QuestAvailableHere = quest;
         MonsterLivingHere = monster;
+        ItemShop = itemList;
+        WeaponShop = weaponList;
     }
 
     public void Info()
@@ -29,5 +33,57 @@ public class Location
         // else {info += "Your not supposed to be here";}
 
         Console.WriteLine(info);
+    }
+
+    public void Shop(Player p1)
+    {
+        Console.Clear();
+        Console.WriteLine("--------------------------------------------------------------------");
+        Console.WriteLine($"Welcome to {Name}");
+        string options = "Options: esc: leave";
+        options += ItemShop!=null?"\nitems: open item shop":"";
+        options += WeaponShop!=null?"\nweapons: open weapon shop":"";
+        Console.WriteLine(options);
+        string option = Console.ReadLine()!.ToLower();
+        while (option != "esc")
+        {
+            if (option == "items" || option == "i")
+            {
+                int itemCount = 0;
+                foreach (Item item in ItemShop)
+                {
+                    Console.WriteLine($"{itemCount}: {item.Name}, Cost = {item.Cost}");
+                }
+            }
+            Console.Write("Do you want to by something? (yes/no): ");
+            string yesOrNo = Console.ReadLine()!;
+            if (yesOrNo == "yes" || yesOrNo == "y")
+            {
+                Console.Write("item number: ");
+                int number = Convert.ToInt32(Console.ReadLine()!);
+                int count = 0;
+                if (number <= ItemShop.Count)
+                {
+                    foreach (Item item in ItemShop)
+                    {
+                        if(number == count && p1.Gold >= item.Cost)
+                        {
+                            p1.itemInventory.Add(item);
+                            p1.Gold-=item.Cost;
+                            ItemShop.Remove(item);
+                            count++;
+                            break;
+                        }
+                        else{Console.WriteLine("Not enough Gold");}
+                    }
+                }
+            }
+            else if (yesOrNo == "no" || yesOrNo == "n")
+            {
+                break;
+            }
+
+
+        }
     }
 }

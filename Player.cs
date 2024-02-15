@@ -98,7 +98,7 @@ public class Player
                 }
                 else {Console.Write($"How many do you want to add to MaxHP ({MaximumHitPoints}): ");
                     int invest2 = Convert.ToInt32(Console.ReadLine()!);
-                    if (invest2 > levelUpPoints){Console.WriteLine("Invalid Amount");}
+                    if (invest2 > levelUpPoints){Console.WriteLine($"Invalid Amount, Amount left: {levelUpPoints}");}
                     else{
                         levelUpPoints-=invest2;
                         MaximumHitPoints += invest2;
@@ -139,6 +139,7 @@ public class Player
 
     public void Bag()
     {
+        Console.Clear();
         Console.WriteLine("--------------------------------------------------------------------");
         Console.WriteLine("Options: items or weapons\nesc: leave bag");
         string wich_inventory = "";

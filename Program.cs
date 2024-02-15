@@ -1,9 +1,7 @@
 ﻿public class Program
 {
     static void Main(string[] args)
-    {
-        // Player p1 = new("Senne", 100, 100, 0, World.WeaponByID(1), World.LocationByID(1));
-        
+    {        
         string startorquit = "";
         do
         {
@@ -14,7 +12,7 @@
 
         Player p1 = CreateCharacter();
 
-        while (p1.CurrentLocation?.ID != 10)
+        while (p1.CurrentLocation?.ID < 100)
         {
             Console.Clear();
             Console.WriteLine("--------------------------------------------------------------------");
@@ -27,10 +25,10 @@
             options += p1.CurrentLocation?.QuestAvailableHere!=null?"\nTalk: Talk to Person":"";
             options += p1.CurrentLocation?.MonsterLivingHere!=null?$"\n: fight: fight {p1.CurrentLocation?.MonsterLivingHere.Name}":"";
             options += p1.CurrentLocation?.ID == 1 ? "\nHeal: Heal to full hp":"";
+            options += p1.CurrentLocation?.ID == 10? "\nShop: enter black marker":"";
             Console.WriteLine(options);
             Console.Write("Choice: ");
             string choice = Console.ReadLine()!.ToLower();
-            // Console.WriteLine("--------------------------------------------------------------------");
 
             if (choice == "move" || choice == "m")
             {
@@ -48,13 +46,16 @@
             {
                 p1.FullHeal();
             }
-            else if (choice == "stats")
+            else if (choice == "shop" || choice == "s" && p1.CurrentLocation?.ID==10)
+            {
+                p1.CurrentLocation?.Shop(p1);
+            }
+            else if (choice == "stats" || choice == "s")
             {
                 p1.stats();
             }
             else if (choice == "talk" || choice == "t" && p1.CurrentLocation?.QuestAvailableHere != null)
             {
-                // Console.WriteLine(p1.CurrentLocation?.QuestAvailableHere?.Npc.Name);
                 p1.CurrentLocation?.QuestAvailableHere?.TalkToNpc(p1);
             }
             else if (choice == "fight" || choice == "f" && p1.CurrentLocation?.MonsterLivingHere != null)
