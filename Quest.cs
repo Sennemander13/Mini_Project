@@ -10,4 +10,9 @@ public class Quest
         Name = name;
         Description = description;
     }
+
+    public void Info()
+    {
+        Console.WriteLine($"Quest Availabele: {Name}\nDescription {Description}");
+    }
 }
