@@ -5,7 +5,7 @@ public class Player
     public Weapon? CurrentWeapon;
     public int MaximumHitPoints;
     public string Name;
-
+    public int Gold = 0;
 
     public Player(string name, int currenthp, int maxhp, Weapon? weapon, Location? location)
     {
@@ -13,6 +13,6 @@ public class Player
         CurrentHitPoints = currenthp;
         CurrentLocation = location;
         CurrentWeapon = weapon;
-        MaximumHitPoints = maxhp
+        MaximumHitPoints = maxhp;
     }
 }

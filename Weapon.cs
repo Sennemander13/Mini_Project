@@ -10,6 +10,4 @@ public class Weapon
         MaxDamage = maxDamage;
         Name = name;
     }
-
-
 }
