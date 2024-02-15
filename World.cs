@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
 public static class World
 {
 
@@ -5,12 +8,17 @@ public static class World
     public static readonly List<Monster> Monsters = new List<Monster>();
     public static readonly List<Quest> Quests = new List<Quest>();
     public static readonly List<Location> Locations = new List<Location>();
+    public static readonly List<Item> Items = new List<Item>();
+    public static readonly List<Npc> Npcs = new List<Npc>();
     public static readonly Random RandomGenerator = new Random();
 
     public const int NPC_ID_FLY = 1;
     public const int NPC_ID_FARMER = 2;
     public const int NPC_ID_ALCHEMIST = 3;
+
     public const int ITEM_ID_TEST = 0;
+    public const int ITEM_ID_HEALTHPOTION = 1;
+
     public const int WEAPON_ID_TEST = 0;
     public const int WEAPON_ID_RUSTY_SWORD = 1;
     public const int WEAPON_ID_CLUB = 2;
@@ -36,10 +44,24 @@ public static class World
 
     static World()
     {
+        PopulateItems();
+        PopulateNpcs();
         PopulateWeapons();
         PopulateMonsters();
         PopulateQuests();
         PopulateLocations();
+        
+    }
+    public static void PopulateNpcs()
+    {
+        Npcs.Add(new Npc(NPC_ID_ALCHEMIST,"Alfie the Alchemist", "Part of the shadow wizzard money gang", "These Rats in my garden are snatching my crystals"));
+        Npcs.Add(new Npc(NPC_ID_FARMER, "Old Jo", "Old but hard working lady", "Its been a while since there where snakes on these farms\nIm statrting to get worried."));
+        Npcs.Add(new Npc(NPC_ID_FLY, "Local fly", "Small and scared little being", "Help, can you please clear the webs for me so that i can live here?"));
+    }
+    public static void PopulateItems()
+    {
+        Items.Add(new Item(ITEM_ID_TEST,"TEST",100,false));
+        Items.Add(new Item(ITEM_ID_HEALTHPOTION, "Health potion", 5, true));
     }
 
 
@@ -51,13 +73,13 @@ public static class World
 
     public static void PopulateMonsters()
     {
-        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
+        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 2, 15, 15, 5, 10);
 
 
-        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
+        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7, 10, 10);
 
 
-        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10, 25, 15);
 
 
         Monsters.Add(rat);
@@ -72,8 +94,7 @@ public static class World
                 QUEST_ID_CLEAR_ALCHEMIST_GARDEN,
                 "Clear the alchemist's garden",
                 "Kill rats in the alchemist's garden ",
-                new Item(ITEM_ID_TEST,"TEST",100,false),
-                new Npc(NPC_ID_ALCHEMIST,"Alfie the Alchemist", "Part of the shadow wizzard money gang", "These Rats in my garden are snatching my crystals"));
+                ItemByID(ITEM_ID_HEALTHPOTION),NpcByID(NPC_ID_ALCHEMIST));//new Npc(NPC_ID_ALCHEMIST,"al","yeet", "story"));
 
 
 
@@ -82,8 +103,8 @@ public static class World
                 QUEST_ID_CLEAR_FARMERS_FIELD,
                 "Clear the farmer's field",
                 "Kill snakes in the farmer's field",
-                new Item(ITEM_ID_TEST,"TEST",100,false),
-                new Npc(NPC_ID_FARMER, "Old Jo", "Old but hard working lady", "Its been a while since there where snakes on these farms\nIm statrting to get worried."));
+                ItemByID(ITEM_ID_HEALTHPOTION),
+                NpcByID(NPC_ID_FARMER));
 
 
         Quest clearSpidersForest =
@@ -91,8 +112,8 @@ public static class World
                 QUEST_ID_COLLECT_SPIDER_SILK,
                 "Collect spider silk",
                 "Kill spiders in the spider forest",
-                new Item(ITEM_ID_TEST,"TEST",100,false),
-                new Npc(NPC_ID_FLY, "Local fly", "Small and scared little being", "Help, can you please clear the webs for me so that i can live here?"));
+                ItemByID(ITEM_ID_HEALTHPOTION),
+                NpcByID(NPC_ID_FLY));
 
 
         Quests.Add(clearAlchemistGarden);
@@ -215,6 +236,30 @@ public static class World
             }
         }
 
+        return null;
+    }
+
+    public static Npc? NpcByID(int id)
+    {
+        foreach (Npc npc in Npcs)
+        {
+            if (npc.ID == id)
+            {
+                return npc;
+            }
+        }
+        return null;
+    }
+
+    public static Item? ItemByID(int id)
+    {
+        foreach (Item item in Items)
+        {
+            if (item.ID == id)
+            {
+                return item;
+            }
+        }
         return null;
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 public class Npc
 {
     public readonly int ID;
