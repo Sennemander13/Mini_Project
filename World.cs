@@ -70,17 +70,18 @@ public static class World
     {
         Weapons.Add(new Weapon(WEAPON_ID_RUSTY_SWORD, "Rusty sword", 5));
         Weapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
+        Weapons.Add(new Weapon(WEAPON_ID_SOLARFLARE, "Solar Flare", 999));
     }
 
     public static void PopulateMonsters()
     {
-        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 2, 15, 15, 5, 10, new List<Item>(){ItemByID(ITEM_ID_HEALTHPOTION),ItemByID(ITEM_ID_TEST)});
+        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 2, 15, 15, 5, 10, new List<Weapon>(){WeaponByID(WEAPON_ID_CLUB)});
 
 
-        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7, 10, 10, new List<Item>(){ItemByID(ITEM_ID_HEALTHPOTION)});
+        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7, 10, 10, new List<Weapon>(){WeaponByID(WEAPON_ID_SOLARFLARE)});
 
 
-        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10, 25, 15, new List<Item>(){ItemByID(ITEM_ID_HEALTHPOTION),ItemByID(ITEM_ID_TEST)});
+        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10, 25, 15, new List<Weapon>(){WeaponByID(ITEM_ID_TEST)});
 
 
         Monsters.Add(rat);
@@ -148,7 +149,7 @@ public static class World
         Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Forest", "You see spider webs covering covering the trees in this forest.", null, null,null,null);
         spiderField.MonsterLivingHere = MonsterByID(MONSTER_ID_GIANT_SPIDER);
 
-        Location shop1 = new Location(LOCATION_ID_SHOP1,"Black Market","Shop to buy mystery items",null,null, new List<Item>(){ItemByID(ITEM_ID_HEALTHPOTION)}, new List<Weapon>(){WeaponByID(WEAPON_ID_CLUB)});
+        Location shop1 = new Location(LOCATION_ID_SHOP1,"Black Market","Shop to buy mystery items",null,null, new List<Item>(){ItemByID(ITEM_ID_HEALTHPOTION)}, null);
 
         // Link the locations together
         home.LocationToNorth = townSquare;

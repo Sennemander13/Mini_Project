@@ -7,9 +7,9 @@ public class Monster
     public int MaximumHitPoints;
     public string Name;
     public int Gold;
-    public List<Item> Droplist;
+    public List<Weapon> Droplist;
     public int ExpDrop;
-    public Monster(int id, string name, int damage, int currenthp, int maxhp, int gold, int expDrop, List<Item> itemlist)
+    public Monster(int id, string name, int damage, int currenthp, int maxhp, int gold, int expDrop, List<Weapon> itemlist)
     {
         ID = id;
         Name = name;
@@ -21,7 +21,7 @@ public class Monster
         Droplist = itemlist;
     }
 
-    public Item? DropRandomOnDeath()
+    public Weapon? DropRandomOnDeath()
     {
         Random rng = new();
         

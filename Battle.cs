@@ -12,6 +12,8 @@ public class Battle
     {
         Random rng = new();
         bool hasHealingPotions = false;
+        int damage = 0;
+        int mDamage = 0;
         while (Player.CurrentHitPoints > 0 && Monster.CurrentHitPoints > 0)
         {
             Console.Clear();
@@ -21,6 +23,8 @@ public class Battle
                 if (item.ID == 1){hasHealingPotions = true;}
             }
             Console.WriteLine($"                                            {Monster.Name} HP: {Monster.CurrentHitPoints}\n\n\n\n\n\n\n{Player.Name} HP:{Player.CurrentHitPoints}");
+            Console.WriteLine($"{Monster.Name} did {mDamage} damage");
+            Console.WriteLine($"You did {damage} damage");
             Console.WriteLine($"choices: Fight, run: run away {(hasHealingPotions ? "or Heal": "")}");
             string choice = Console.ReadLine()!.ToLower();
             if (hasHealingPotions && choice == "heal")
@@ -31,7 +35,7 @@ public class Battle
             }
             else if (choice == "fight" || choice == "f")
             {
-                int damage = rng.Next((Player.CurrentWeapon.MaxDamage + Player.BaseDamage) - 5, (Player.CurrentWeapon.MaxDamage +Player.BaseDamage));
+                damage = rng.Next((Player.CurrentWeapon.MaxDamage + Player.BaseDamage) - 5, (Player.CurrentWeapon.MaxDamage +Player.BaseDamage));
                 Monster.CurrentHitPoints -= damage;
                 Console.WriteLine($"You did {damage} damage");
             }
@@ -39,10 +43,9 @@ public class Battle
             {
                 break;
             }
-            int mDamage = rng.Next(Monster.MaximumDamage - 1, Monster.MaximumDamage);
+            mDamage = rng.Next(Monster.MaximumDamage - 1, Monster.MaximumDamage);
             hasHealingPotions = false;
             Player.CurrentHitPoints -= mDamage;
-            Console.WriteLine($"{Monster.Name} did {mDamage} damage");
         }
 
         if (Player.CurrentHitPoints <= 0)
@@ -58,9 +61,9 @@ public class Battle
             Console.Write($"You Won\nHeal at home\nCurrent hp: {Player.CurrentHitPoints}\nGained {Monster.Gold} gold\n");
             Player.Gold += Monster.Gold;
             Player.CurrentExp += Monster.ExpDrop;
-            Item drop = Monster.DropRandomOnDeath();
+            Weapon drop = Monster.DropRandomOnDeath();
             Console.WriteLine($"Added {drop.Name} to items inventory");
-            Player.itemInventory.Add(drop);
+            Player.weaponInventory.Add(drop);
             Player.CurrentLocation.MonsterLivingHere = null;
             Console.WriteLine($"EXP: {Player.CurrentExp}/{Player.ExpNeeded}");
             Player.TryLevelUp();

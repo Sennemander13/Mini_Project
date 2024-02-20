@@ -6,7 +6,7 @@ public class Player
     public int MaximumHitPoints;
     public int BaseDamage;
     public string Name;
-    public int Gold = 0;
+    public int Gold = 10;
     public int Level = 1;
     public int ExpNeeded = 10;
     public int CurrentExp = 0;
@@ -132,7 +132,7 @@ public class Player
         Console.WriteLine($"\nName: {Name} Level: {Level}\nEXP {CurrentExp} out of {ExpNeeded}");
         Console.WriteLine($"Base Damage: {BaseDamage} Max Damage: {BaseDamage + CurrentWeapon.MaxDamage}");
         Console.WriteLine($"Health: {CurrentHitPoints} out of {MaximumHitPoints}");
-        Console.WriteLine($"Gold: {Gold} Equiped Weapon: {CurrentWeapon.Name}");
+        Console.WriteLine($"Gold: {Gold} Equiped Weapon: {CurrentWeapon.Name}, DMG: {CurrentWeapon.MaxDamage}");
         Console.Write("Press enter");
         Console.ReadLine();
     }
@@ -150,17 +150,53 @@ public class Player
             {
                 foreach (Item item in itemInventory)
                 {
-                    Console.WriteLine($"{item.Name}: {item.Value}");
+                    Console.WriteLine($"{item.Name} worth: {item.Value} gold");
                 }
             }
             else if (wich_inventory == "weapons")
             {
+                int count = 0;
                 foreach (Weapon weapon in weaponInventory)
                 {
-                    Console.WriteLine($"{weapon.Name}: {weapon.MaxDamage}");
+                    Console.WriteLine($"{count}|{weapon.Name}: {weapon.MaxDamage}");
+                    count++;
+                }
+                Console.WriteLine("Equip weapon? (y/n)");
+                string yesOrNo = Console.ReadLine()!.ToLower();
+                if (yesOrNo == "n" || yesOrNo == "no")
+                {
+                    break;
+                }
+                else if (yesOrNo == "y" || yesOrNo == "yes")
+                {
+                    Console.WriteLine("Wich Weapon (number):");
+                    int index = Convert.ToInt32(Console.ReadLine()!);
+                    setWeapon(index);
+                    break;
                 }
             }
         }
+    }
+
+    public void setWeapon(int number)
+    {
+        //equips weapon out of bag
+        Weapon? newWeapon = null;
+        Weapon? currentWeapon = CurrentWeapon;
+
+        int count = 0;
+        foreach (Weapon weapon in weaponInventory)
+        {
+            if (count == number)
+            {
+                newWeapon = weapon;
+                break;
+            }
+            count++;
+        }
+        weaponInventory.Add(currentWeapon);
+        this.CurrentWeapon = newWeapon;
+        Console.WriteLine($"new equiped weapon: {CurrentWeapon.Name}");
     }
     public Item? DropRandomOnDeath()
     {

@@ -42,7 +42,6 @@ public class Location
         Console.WriteLine($"Welcome to {Name}");
         string options = "Options: esc: leave";
         options += ItemShop!=null?"\nitems: open item shop":"";
-        options += WeaponShop!=null?"\nweapons: open weapon shop":"";
         Console.WriteLine(options);
         string option = Console.ReadLine()!.ToLower();
         while (option != "esc")
