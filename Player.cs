@@ -148,9 +148,22 @@ public class Player
             wich_inventory = Console.ReadLine()!.ToLower();
             if (wich_inventory == "items")
             {
+                Dictionary<Item,int> individual = new();
                 foreach (Item item in itemInventory)
                 {
-                    Console.WriteLine($"{item.Name} worth: {item.Value} gold");
+                    if (individual.ContainsKey(item))
+                    {
+                        individual[item]++;
+                    }
+                    else 
+                    {
+                        individual[item] = 1;
+                    }
+                }
+
+                foreach (Item item1 in individual.Keys)
+                {
+                    Console.WriteLine($"{item1.Name}, amount: {individual[item1]} worth: {item1.Value*individual[item1]} ({item1.Value})gold");
                 }
             }
             else if (wich_inventory == "weapons")
