@@ -27,7 +27,7 @@ public class Battle
             Console.WriteLine($"You did {damage} damage");
             Console.WriteLine($"choices: Fight, run: run away {(hasHealingPotions ? "or Heal": "")}");
             string choice = Console.ReadLine()!.ToLower();
-            if (hasHealingPotions && choice == "heal")
+            if (hasHealingPotions && choice == "heal" || choice == "h")
             {
                 Player.CurrentHitPoints += 10;
                 if (Player.CurrentHitPoints > Player.MaximumHitPoints){Player.CurrentHitPoints = Player.MaximumHitPoints;}
@@ -62,9 +62,10 @@ public class Battle
             Player.Gold += Monster.Gold;
             Player.CurrentExp += Monster.ExpDrop;
             Weapon drop = Monster.DropRandomOnDeath();
-            Console.WriteLine($"Added {drop.Name} to items inventory");
+
+            Console.WriteLine(drop != null ? $"Added {drop.Name} to items inventory":"");
             Player.weaponInventory.Add(drop);
-            Player.CurrentLocation.MonsterLivingHere = null;
+            Player.CurrentLocation.MonsterLivingHere.Remove(Monster);
             Console.WriteLine($"EXP: {Player.CurrentExp}/{Player.ExpNeeded}");
             Player.TryLevelUp();
             // take item from its inventory

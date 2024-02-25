@@ -24,7 +24,7 @@ public class Quest
     public void TalkToNpc(Player p1)
     {
         
-        if (World.LocationByID(p1.CurrentLocation.ID+1)?.MonsterLivingHere == null)
+        if (World.LocationByID(p1.CurrentLocation.ID+1)?.MonsterLivingHere.Count == 0)
         {
             if (Reward != null){
                 Console.WriteLine($"Quest Completed here is your reward: {Reward.Name}");
@@ -34,7 +34,7 @@ public class Quest
             Console.Write("press enter");
             Console.ReadLine();
         }
-        if (doing == 1 && World.LocationByID(p1.CurrentLocation.ID+1)?.MonsterLivingHere != null)
+        if (doing == 1 && World.LocationByID(p1.CurrentLocation.ID+1)?.MonsterLivingHere.Count != 0)
         {
             Console.WriteLine($"You already have accepted {Name} \nfrom {Npc?.Name}");
             Console.Write("press enter");

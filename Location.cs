@@ -4,15 +4,16 @@ public class Location
     public string? Name;
     public string? Description;
     public Quest? QuestAvailableHere;
-    public Monster? MonsterLivingHere;
+    public List<Monster> MonsterLivingHere;
     public List<Item> ItemShop;
     public List<Weapon> WeaponShop;
     public Location? LocationToNorth;
     public Location? LocationToEast;
     public Location? LocationToSouth;
     public Location? LocationToWest;
+    public Item? itemNecesery;
 
-    public Location(int id, string name, string description, Quest? quest, Monster? monster, List<Item> itemList, List<Weapon> weaponList)
+    public Location(int id, string name, string description, Quest? quest, List<Monster> monster, List<Item> itemList, List<Weapon> weaponList, Item? itemnecesry)
     {
         ID = id;
         Name = name;
@@ -21,6 +22,7 @@ public class Location
         MonsterLivingHere = monster;
         ItemShop = itemList;
         WeaponShop = weaponList;
+        itemNecesery = itemnecesry;
     }
 
     public void Info()

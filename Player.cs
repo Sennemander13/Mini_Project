@@ -29,9 +29,14 @@ public class Player
         {
             case "n":
             case "north":
-                if (CurrentLocation?.LocationToNorth != null)
+                if (itemInventory.Contains(CurrentLocation.LocationToNorth.itemNecesery) || CurrentLocation.LocationToNorth.itemNecesery == null)
                 {
                     CurrentLocation = CurrentLocation.LocationToNorth;
+                }
+                else
+                {
+                    Console.WriteLine("You dont have the key\nPress Enter");
+                    Console.ReadLine();
                 }
                 break;
             case "east":
@@ -40,6 +45,11 @@ public class Player
                 {
                     CurrentLocation = CurrentLocation.LocationToEast;
                 }
+                else
+                {
+                    Console.WriteLine("You dont have the key\nPress Enter");
+                    Console.ReadLine();
+                }
                 break;
             case "s":
             case "south":
@@ -47,12 +57,22 @@ public class Player
                 {
                     CurrentLocation = CurrentLocation.LocationToSouth;
                 }
+                else
+                {
+                    Console.WriteLine("You dont have the key\nPress Enter");
+                    Console.ReadLine();
+                }
                 break;
             case "west":
             case "w":
                 if (CurrentLocation?.LocationToWest != null)
                 {
                     CurrentLocation = CurrentLocation.LocationToWest;
+                }
+                else
+                {
+                    Console.WriteLine("You dont have the key\nPress Enter");
+                    Console.ReadLine();
                 }
                 break;
             default:
@@ -146,7 +166,7 @@ public class Player
         while (wich_inventory != "esc")
         {
             wich_inventory = Console.ReadLine()!.ToLower();
-            if (wich_inventory == "items")
+            if (wich_inventory == "items" || wich_inventory == "i")
             {
                 Dictionary<Item,int> individual = new();
                 foreach (Item item in itemInventory)
@@ -166,7 +186,7 @@ public class Player
                     Console.WriteLine($"{item1.Name}, amount: {individual[item1]} worth: {item1.Value*individual[item1]} ({item1.Value})gold");
                 }
             }
-            else if (wich_inventory == "weapons")
+            else if (wich_inventory == "weapons" || wich_inventory == "w")
             {
                 int count = 0;
                 foreach (Weapon weapon in weaponInventory)

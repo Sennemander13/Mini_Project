@@ -23,7 +23,8 @@
             }
             string options = $"Options:\nesc: pause/quit game\nbag: open bag\nMove: move to other location\nStats: see player stats";
             options += p1.CurrentLocation?.QuestAvailableHere!=null?"\nTalk: Talk to Person":"";
-            options += p1.CurrentLocation?.MonsterLivingHere!=null?$"\n: fight: fight {p1.CurrentLocation?.MonsterLivingHere.Name}":"";
+            var monsterCount = p1.CurrentLocation?.MonsterLivingHere.Count ?? 0;
+            options += monsterCount!=0?$"\nfight: fight {p1.CurrentLocation?.MonsterLivingHere[0].Name}":"";
             options += p1.CurrentLocation?.ID == 1 ? "\nHeal: Heal to full hp":"";
             options += p1.CurrentLocation?.ID == 10? "\nShop: enter black marker":"";
             Console.WriteLine(options);
@@ -38,7 +39,7 @@
                 string move = Console.ReadLine()!.ToLower();
                 p1.MoveTo(move);
             }
-            else if (choice == "bag")
+            else if (choice == "bag" || choice == "b")
             {
                 p1.Bag();
             }
@@ -58,14 +59,27 @@
             {
                 p1.CurrentLocation?.QuestAvailableHere?.TalkToNpc(p1);
             }
-            else if (choice == "fight" || choice == "f" && p1.CurrentLocation?.MonsterLivingHere != null)
+            else if (choice == "fight" || choice == "f" && p1.CurrentLocation?.MonsterLivingHere.Count != 0)
             {
-                Battle battle = new(p1, p1.CurrentLocation.MonsterLivingHere);
+                Battle battle = new(p1, p1.CurrentLocation.MonsterLivingHere[0]);
                 battle.fight();
             }
             else if (choice == "esc")
             {
-                break;
+                Console.Clear();
+                Console.WriteLine("--------------------------------------------------------------------");
+                Console.WriteLine();
+                Console.WriteLine("\n\n         Resume                                 Quit");
+                Console.Write("\n                         Choice: ");
+                string x = Console.ReadLine()!.ToLower();
+                if (x == "resume" || x == "r")
+                {
+                    continue;
+                }
+                else if (x == "quit" || x == "q")
+                {
+                    break;
+                }
             }
         }
 
