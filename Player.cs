@@ -29,7 +29,8 @@ public class Player
         {
             case "n":
             case "north":
-                if (itemInventory.Contains(CurrentLocation.LocationToNorth.itemNecesery) || CurrentLocation.LocationToNorth.itemNecesery == null)
+                Item itemNecesery1 = CurrentLocation!.LocationToNorth!.itemNecesery!;
+                if ((itemNecesery1 != null && itemInventory!.Contains(itemNecesery1)) || itemNecesery1 == null)
                 {
                     CurrentLocation = CurrentLocation.LocationToNorth;
                 }
@@ -41,7 +42,8 @@ public class Player
                 break;
             case "east":
             case "e":
-                if (CurrentLocation?.LocationToEast != null)
+                Item itemNecesery2 = CurrentLocation!.LocationToEast!.itemNecesery!;
+                if ((itemNecesery2 != null && itemInventory!.Contains(itemNecesery2)) || itemNecesery2 == null)
                 {
                     CurrentLocation = CurrentLocation.LocationToEast;
                 }
@@ -53,7 +55,8 @@ public class Player
                 break;
             case "s":
             case "south":
-                if (CurrentLocation?.LocationToSouth != null)
+                Item itemNecesery3 = CurrentLocation!.LocationToSouth!.itemNecesery!;
+                if ((itemNecesery3 != null && itemInventory!.Contains(itemNecesery3)) || itemNecesery3 == null)
                 {
                     CurrentLocation = CurrentLocation.LocationToSouth;
                 }
@@ -65,7 +68,8 @@ public class Player
                 break;
             case "west":
             case "w":
-                if (CurrentLocation?.LocationToWest != null)
+                Item itemNecesery4 = CurrentLocation!.LocationToWest!.itemNecesery!;
+                if ((itemNecesery4 != null && itemInventory!.Contains(itemNecesery4)) || itemNecesery4 == null)
                 {
                     CurrentLocation = CurrentLocation.LocationToWest;
                 }

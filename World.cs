@@ -78,10 +78,10 @@ public static class World
 
     public static void PopulateMonsters()
     {
-        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 2, 15, 15, 5, 10, new List<Weapon>(){WeaponByID(WEAPON_ID_CLUB)});
+        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 2, 15, 15, 5, 10, new List<Weapon>(){WeaponByID(WEAPON_ID_CLUB)!});
 
 
-        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7, 10, 10, new List<Weapon>(){WeaponByID(WEAPON_ID_SOLARFLARE)});
+        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7, 10, 10, new List<Weapon>(){WeaponByID(WEAPON_ID_SOLARFLARE)!});
 
 
         Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10, 25, 15, new List<Weapon>());
@@ -131,40 +131,34 @@ public static class World
     public static void PopulateLocations()
     {
         // Create each location
-        Location home = new Location(LOCATION_ID_HOME, "Home", "Your house. You really need to clean up the place.", null, null,null,null,null);
-        home.MonsterLivingHere = new List<Monster>();
-        Location townSquare = new Location(LOCATION_ID_TOWN_SQUARE, "Town square", "You see a fountain.", null, null,null,null,null);
-        townSquare.MonsterLivingHere = new List<Monster>();
+        Location home = new Location(LOCATION_ID_HOME, "Home", "Your house. You really need to clean up the place.", null,new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
+        Location townSquare = new Location(LOCATION_ID_TOWN_SQUARE, "Town square", "You see a fountain.", null, new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
 
-        Location alchemistHut = new Location(LOCATION_ID_ALCHEMIST_HUT, "Alchemist's hut", "There are many strange plants on the shelves.", null, null,null,null,null);
+        Location alchemistHut = new Location(LOCATION_ID_ALCHEMIST_HUT, "Alchemist's hut", "There are many strange plants on the shelves.", null,new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
         alchemistHut.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_ALCHEMIST_GARDEN);
-        alchemistHut.MonsterLivingHere = new List<Monster>();
 
-        Location alchemistsGarden = new Location(LOCATION_ID_ALCHEMISTS_GARDEN, "Alchemist's garden", "Many plants are growing here.", null, null,null,null,null);
-        alchemistsGarden.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_RAT)};
+        Location alchemistsGarden = new Location(LOCATION_ID_ALCHEMISTS_GARDEN, "Alchemist's garden", "Many plants are growing here.", null,new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
+        alchemistsGarden.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_RAT)!};
 
-        Location farmhouse = new Location(LOCATION_ID_FARMHOUSE, "Farmhouse", "There is a small farmhouse, with a farmer in front.", null, null,null,null,null);
+        Location farmhouse = new Location(LOCATION_ID_FARMHOUSE, "Farmhouse", "There is a small farmhouse, with a farmer in front.", null, new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
         farmhouse.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_FARMERS_FIELD);
-        farmhouse.MonsterLivingHere = new List<Monster>();
 
-        Location farmersField = new Location(LOCATION_ID_FARM_FIELD, "Farmer's field", "You see rows of vegetables growing here.", null, null,null,null,null);
-        farmersField.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_SNAKE)};
+        Location farmersField = new Location(LOCATION_ID_FARM_FIELD, "Farmer's field", "You see rows of vegetables growing here.", null, new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
+        farmersField.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_SNAKE)!};
 
-        Location guardPost = new Location(LOCATION_ID_GUARD_POST, "Guard post", "There is a large, tough-looking guard here.", null, null,null,null,null);
-        guardPost.MonsterLivingHere = new List<Monster>();
+        Location guardPost = new Location(LOCATION_ID_GUARD_POST, "Guard post", "There is a large, tough-looking guard here.", null, new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
 
-        Location bridge = new Location(LOCATION_ID_BRIDGE, "Bridge", "A stone bridge crosses a wide river.", null, null,null,null,null);
+        Location bridge = new Location(LOCATION_ID_BRIDGE, "Bridge", "A stone bridge crosses a wide river.", null, new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
         bridge.QuestAvailableHere = QuestByID(QUEST_ID_COLLECT_SPIDER_SILK);
-        bridge.MonsterLivingHere = new List<Monster>();
 
-        Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Forest", "You see spider webs covering covering the trees in this forest.", null, null,null,null,null);
-        spiderField.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_GIANT_SPIDER)};
+        Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Forest", "You see spider webs covering covering the trees in this forest.", null, new List<Monster>(),new List<Item>(),new List<Weapon>(),null);
+        spiderField.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_GIANT_SPIDER)!};
 
         
-        Location shop1 = new Location(LOCATION_ID_SHOP1,"Black Market","Shop to buy mystery items",null,null, new List<Item>(){ItemByID(ITEM_ID_HEALTHPOTION)}, null,null);
-        shop1.MonsterLivingHere = new List<Monster>();
-        Location dungeon1 = new Location(LOCATION_ID_DUNGEON1,"Dungeon", "A Long dark deep cave fulled with monsters", null, null, null, null, ItemByID(ITEM_ID_KEY));
-        dungeon1.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_GOBLIN),MonsterByID(MONSTER_ID_GOBLIN),MonsterByID(MONSTER_ID_GOBLIN)};
+        Location shop1 = new Location(LOCATION_ID_SHOP1,"Black Market","Shop to buy mystery items",null,new List<Monster>(), new List<Item>(){ItemByID(ITEM_ID_HEALTHPOTION)!}, new List<Weapon>(),null);
+
+        Location dungeon1 = new Location(LOCATION_ID_DUNGEON1,"Dungeon", "A Long dark deep cave fulled with monsters", null, new List<Monster>(), new List<Item>(), new List<Weapon>(), ItemByID(ITEM_ID_KEY));
+        dungeon1.MonsterLivingHere = new List<Monster>(){MonsterByID(MONSTER_ID_GOBLIN)!,MonsterByID(MONSTER_ID_GOBLIN)!,MonsterByID(MONSTER_ID_GOBLIN)!};
 
         // Link the locations together
         home.LocationToNorth = townSquare;

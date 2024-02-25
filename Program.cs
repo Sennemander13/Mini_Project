@@ -10,9 +10,9 @@
             else if (startorquit == "start" || startorquit == "s"){break;}
         }while(startorquit != "start");
 
-        Player p1 = CreateCharacter();
+        Player p1 = CreateCharacter()!;
 
-        while (p1.CurrentLocation?.ID < 100)
+        while (p1!.CurrentLocation?.ID < 100)
         {
             Console.Clear();
             Console.WriteLine("--------------------------------------------------------------------");
@@ -61,7 +61,7 @@
             }
             else if (choice == "fight" || choice == "f" && p1.CurrentLocation?.MonsterLivingHere.Count != 0)
             {
-                Battle battle = new(p1, p1.CurrentLocation.MonsterLivingHere[0]);
+                Battle battle = new(p1, p1.CurrentLocation!.MonsterLivingHere[0]!);
                 battle.fight();
             }
             else if (choice == "esc")

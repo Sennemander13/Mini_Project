@@ -51,7 +51,7 @@ public class Location
             if (option == "items" || option == "i")
             {
                 int itemCount = 0;
-                foreach (Item item in ItemShop)
+                foreach (Item item in ItemShop!)
                 {
                     Console.WriteLine($"{itemCount}: {item.Name}, Cost = {item.Cost}");
                 }

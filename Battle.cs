@@ -14,7 +14,7 @@ public class Battle
         bool hasHealingPotions = false;
         int damage = 0;
         int mDamage = 0;
-        while (Player.CurrentHitPoints > 0 && Monster.CurrentHitPoints > 0)
+        while (Player!.CurrentHitPoints > 0 && Monster.CurrentHitPoints > 0)
         {
             Console.Clear();
             Console.WriteLine("--------------------------------------------------------------------");
