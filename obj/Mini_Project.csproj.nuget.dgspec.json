@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\31653\\Desktop\\ProjectB_mini\\Mini_Project\\Mini_Project.csproj": {}
+    "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\31653\\Desktop\\ProjectB_mini\\Mini_Project\\Mini_Project.csproj": {
+    "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\Mini_Project\\Mini_Project.csproj",
+        "projectUniqueName": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj",
         "projectName": "Mini_Project",
-        "projectPath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\Mini_Project\\Mini_Project.csproj",
+        "projectPath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj",
         "packagesPath": "C:\\Users\\31653\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\Mini_Project\\obj\\",
+        "outputPath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\31653\\AppData\\Roaming\\NuGet\\NuGet.Config",
