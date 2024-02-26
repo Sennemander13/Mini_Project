@@ -4,7 +4,7 @@
     {        
         string startorquit = "";
         do
-        {
+        { // start
             startorquit = Menu();
             if (startorquit == "quit" || startorquit == "q"){return;}
             else if (startorquit == "start" || startorquit == "s"){break;}
