@@ -13,3 +13,18 @@ C:\Users\31653\Desktop\ProjectB_mini\Mini_Project\obj\Debug\net8.0\refint\Mini_P
 C:\Users\31653\Desktop\ProjectB_mini\Mini_Project\obj\Debug\net8.0\Mini_Project.pdb
 C:\Users\31653\Desktop\ProjectB_mini\Mini_Project\obj\Debug\net8.0\Mini_Project.genruntimeconfig.cache
 C:\Users\31653\Desktop\ProjectB_mini\Mini_Project\obj\Debug\net8.0\ref\Mini_Project.dll
+C:\mini project\Mini_Project\bin\Debug\net8.0\Mini_Project.exe
+C:\mini project\Mini_Project\bin\Debug\net8.0\Mini_Project.deps.json
+C:\mini project\Mini_Project\bin\Debug\net8.0\Mini_Project.runtimeconfig.json
+C:\mini project\Mini_Project\bin\Debug\net8.0\Mini_Project.dll
+C:\mini project\Mini_Project\bin\Debug\net8.0\Mini_Project.pdb
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.AssemblyInfoInputs.cache
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.AssemblyInfo.cs
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.csproj.CoreCompileInputs.cache
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.sourcelink.json
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.dll
+C:\mini project\Mini_Project\obj\Debug\net8.0\refint\Mini_Project.dll
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.pdb
+C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.genruntimeconfig.cache
+C:\mini project\Mini_Project\obj\Debug\net8.0\ref\Mini_Project.dll

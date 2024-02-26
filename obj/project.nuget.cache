@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "dvz6we3krE8PxjMi2cluFNhKKINimvmlDTclfm6XYm38w4v6apkuKL0N6ZabV+1E1VxLbKul9BC6f9s1pHGHTg==",
   "success": true,
   "projectFilePath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj",
+=======
+  "dgSpecHash": "ZWoWxbBvTOL9uqFnlTpNVaGFnSi23FR4cWJPS7UgPqFUtngARsSFzX6ZBXupulXGXZxxp7kFB1g2PeBSP2/JHQ==",
+  "success": true,
+  "projectFilePath": "C:\\mini project\\Mini_Project\\Mini_Project.csproj",
+>>>>>>> dacefa208e573b98d5d3209f160235690e6fc051
   "expectedPackageFiles": [],
   "logs": []
 }
