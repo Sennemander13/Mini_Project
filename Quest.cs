@@ -24,22 +24,6 @@ public class Quest
     public void TalkToNpc(Player p1)
     {
         Location questLocation = World.LocationByID(p1.CurrentLocation!.ID + 1!)!;
-        if (questLocation != null && questLocation.MonsterLivingHere.Count == 0)
-        {
-            if (Reward != null){
-                Console.WriteLine($"Quest Completed here is your reward: {Reward.Name}");
-                p1.itemInventory.Add(Reward);
-            }
-            p1.CurrentLocation.QuestAvailableHere = null;
-            Console.Write("press enter");
-            Console.ReadLine();
-        }
-        if (questLocation != null && questLocation.MonsterLivingHere.Count != 0)
-        {
-            Console.WriteLine($"You already have accepted {Name} \nfrom {Npc?.Name}");
-            Console.Write("press enter");
-            Console.ReadLine();
-        }
         if (doing == 0)
         {
             Console.WriteLine($"Name: {Npc?.Name}, {Npc?.Description}\n{Npc?.Story}");
@@ -48,8 +32,23 @@ public class Quest
             Console.ReadLine();
             doing++;
         }
-        
-        
+        else if (questLocation != null && questLocation.MonsterLivingHere.Count != 0)
+        {
+            Console.WriteLine($"You already have accepted {Name} \nfrom {Npc?.Name}");
+            Console.Write("press enter");
+            Console.ReadLine();
+        }
+        if (questLocation != null && questLocation.MonsterLivingHere.Count == 0)
+        {
+            if (Reward != null)
+            {
+                Console.WriteLine($"Quest Completed here is your reward: {Reward.Name}");
+                p1.itemInventory.Add(Reward);
+            }
+            p1.CurrentLocation.QuestAvailableHere = null;
+            Console.Write("press enter");
+            Console.ReadLine();
+        }
     }
 
 }

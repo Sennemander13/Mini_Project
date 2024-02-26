@@ -11,7 +11,7 @@ public class Location
     public Location? LocationToEast;
     public Location? LocationToSouth;
     public Location? LocationToWest;
-    public Item? itemNecesery;
+    public Item? item_Necessary;
 
     public Location(int id, string name, string description, Quest? quest, List<Monster> monster, List<Item> itemList, List<Weapon> weaponList, Item? itemnecesry)
     {
@@ -22,16 +22,16 @@ public class Location
         MonsterLivingHere = monster;
         ItemShop = itemList;
         WeaponShop = weaponList;
-        itemNecesery = itemnecesry;
+        item_Necessary = itemnecesry;
     }
 
     public void Info()
     {
         string info = "From here you can go:";
-        if (LocationToNorth != null){info += $"\nNorth: {LocationToNorth.Name}";}
-        if (LocationToEast != null){info += $"\nEast: {LocationToEast.Name}";}
-        if (LocationToSouth != null){info += $"\nSouth: {LocationToSouth.Name}";}
-        if (LocationToWest != null){info += $"\nWest: {LocationToWest.Name}";}
+        if (LocationToNorth != null) { info += $"\nNorth: {LocationToNorth.Name}"; }
+        if (LocationToEast != null) { info += $"\nEast: {LocationToEast.Name}"; }
+        if (LocationToSouth != null) { info += $"\nSouth: {LocationToSouth.Name}"; }
+        if (LocationToWest != null) { info += $"\nWest: {LocationToWest.Name}"; }
         // else {info += "Your not supposed to be here";}
 
         Console.WriteLine(info);
@@ -43,7 +43,7 @@ public class Location
         Console.WriteLine("--------------------------------------------------------------------");
         Console.WriteLine($"Welcome to {Name}");
         string options = "Options: esc: leave";
-        options += ItemShop!=null?"\nitems: open item shop":"";
+        options += ItemShop != null ? "\nitems: open item shop" : "";
         Console.WriteLine(options);
         string option = Console.ReadLine()!.ToLower();
         while (option != "esc")
@@ -67,15 +67,15 @@ public class Location
                 {
                     foreach (Item item in ItemShop)
                     {
-                        if(number == count && p1.Gold >= item.Cost)
+                        if (number == count && p1.Gold >= item.Cost)
                         {
                             p1.itemInventory.Add(item);
-                            p1.Gold-=item.Cost;
+                            p1.Gold -= item.Cost;
                             ItemShop.Remove(item);
                             count++;
                             break;
                         }
-                        else{Console.WriteLine("Not enough Gold");}
+                        else { Console.WriteLine("Not enough Gold"); }
                     }
                 }
             }
