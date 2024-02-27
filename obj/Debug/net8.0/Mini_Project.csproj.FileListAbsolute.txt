@@ -28,3 +28,18 @@ C:\mini project\Mini_Project\obj\Debug\net8.0\refint\Mini_Project.dll
 C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.pdb
 C:\mini project\Mini_Project\obj\Debug\net8.0\Mini_Project.genruntimeconfig.cache
 C:\mini project\Mini_Project\obj\Debug\net8.0\ref\Mini_Project.dll
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\bin\Debug\net8.0\Mini_Project.exe
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\bin\Debug\net8.0\Mini_Project.deps.json
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\bin\Debug\net8.0\Mini_Project.runtimeconfig.json
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\bin\Debug\net8.0\Mini_Project.dll
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\bin\Debug\net8.0\Mini_Project.pdb
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.AssemblyInfoInputs.cache
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.AssemblyInfo.cs
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.csproj.CoreCompileInputs.cache
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.sourcelink.json
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.dll
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\refint\Mini_Project.dll
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.pdb
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\Mini_Project.genruntimeconfig.cache
+C:\Users\Hicha\OneDrive\Documenten\School\Jaar 1\Project B\Mini_Project\obj\Debug\net8.0\ref\Mini_Project.dll

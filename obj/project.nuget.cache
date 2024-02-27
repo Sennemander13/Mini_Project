@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "dvz6we3krE8PxjMi2cluFNhKKINimvmlDTclfm6XYm38w4v6apkuKL0N6ZabV+1E1VxLbKul9BC6f9s1pHGHTg==",
+  "dgSpecHash": "IQV6HLQ7atGONuRXHqVh8AOjBItFl4IDBjyffuEFELbvWZAgxHq68yIvvTReAYhMNi/FDY3g1qki+CqlSVld6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj",
-=======
-  "dgSpecHash": "ZWoWxbBvTOL9uqFnlTpNVaGFnSi23FR4cWJPS7UgPqFUtngARsSFzX6ZBXupulXGXZxxp7kFB1g2PeBSP2/JHQ==",
-  "success": true,
-  "projectFilePath": "C:\\mini project\\Mini_Project\\Mini_Project.csproj",
->>>>>>> dacefa208e573b98d5d3209f160235690e6fc051
+  "projectFilePath": "C:\\Users\\Hicha\\OneDrive\\Documenten\\School\\Jaar 1\\Project B\\Mini_Project\\Mini_Project.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Hicha\\OneDrive\\Documenten\\School\\Jaar 1\\Project B\\Mini_Project\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -1,34 +1,20 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj": {}
+    "C:\\Users\\Hicha\\OneDrive\\Documenten\\School\\Jaar 1\\Project B\\Mini_Project\\Mini_Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj": {
+    "C:\\Users\\Hicha\\OneDrive\\Documenten\\School\\Jaar 1\\Project B\\Mini_Project\\Mini_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj",
+        "projectUniqueName": "C:\\Users\\Hicha\\OneDrive\\Documenten\\School\\Jaar 1\\Project B\\Mini_Project\\Mini_Project.csproj",
         "projectName": "Mini_Project",
-        "projectPath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\Mini_Project.csproj",
-        "packagesPath": "C:\\Users\\31653\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\31653\\Desktop\\ProjectB_mini\\mini_project\\obj\\",
-=======
-    "C:\\mini project\\Mini_Project\\Mini_Project.csproj": {}
-  },
-  "projects": {
-    "C:\\mini project\\Mini_Project\\Mini_Project.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\mini project\\Mini_Project\\Mini_Project.csproj",
-        "projectName": "Mini_Project",
-        "projectPath": "C:\\mini project\\Mini_Project\\Mini_Project.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\mini project\\Mini_Project\\obj\\",
->>>>>>> dacefa208e573b98d5d3209f160235690e6fc051
+        "projectPath": "C:\\Users\\Hicha\\OneDrive\\Documenten\\School\\Jaar 1\\Project B\\Mini_Project\\Mini_Project.csproj",
+        "packagesPath": "C:\\Users\\Hicha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hicha\\OneDrive\\Documenten\\School\\Jaar 1\\Project B\\Mini_Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Hicha\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

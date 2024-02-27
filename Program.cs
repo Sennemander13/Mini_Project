@@ -1,14 +1,14 @@
 ﻿public class Program
 {
     static void Main(string[] args)
-    {        
+    {
         string startorquit = "";
         do
         {
             startorquit = Menu();
-            if (startorquit == "quit" || startorquit == "q"){return;}
-            else if (startorquit == "start" || startorquit == "s"){break;}
-        }while(startorquit != "start");
+            if (startorquit == "quit" || startorquit == "q") { return; }
+            else if (startorquit == "start" || startorquit == "s") { break; }
+        } while (startorquit != "start");
 
         Player p1 = CreateCharacter()!;
 
@@ -22,11 +22,11 @@
                 p1.CurrentLocation.QuestAvailableHere.Info();
             }
             string options = $"Options:\nesc: pause/quit game\nbag: open bag\nMove: move to other location\nStats: see player stats";
-            options += p1.CurrentLocation?.QuestAvailableHere!=null?"\nTalk: Talk to Person":"";
+            options += p1.CurrentLocation?.QuestAvailableHere != null ? "\nTalk: Talk to Person" : "";
             var monsterCount = p1.CurrentLocation?.MonsterLivingHere.Count ?? 0;
-            options += monsterCount!=0?$"\nfight: fight {p1.CurrentLocation?.MonsterLivingHere[0].Name}":"";
-            options += p1.CurrentLocation?.ID == 1 ? "\nHeal: Heal to full hp":"";
-            options += p1.CurrentLocation?.ID == 10? "\nShop: enter black marker":"";
+            options += monsterCount != 0 ? $"\nfight: fight {p1.CurrentLocation?.MonsterLivingHere[0].Name}" : "";
+            options += p1.CurrentLocation?.ID == 1 ? "\nHeal: Heal to full hp" : "";
+            options += p1.CurrentLocation?.ID == 10 ? "\nShop: enter black marker" : "";
             Console.WriteLine(options);
             Console.Write("Choice: ");
             string choice = Console.ReadLine()!.ToLower();
@@ -47,7 +47,7 @@
             {
                 p1.FullHeal();
             }
-            else if (choice == "shop" || choice == "s" && p1.CurrentLocation?.ID==10)
+            else if (choice == "shop" || choice == "s" && p1.CurrentLocation?.ID == 10)
             {
                 p1.CurrentLocation?.Shop(p1);
             }
@@ -82,12 +82,11 @@
                 }
             }
         }
-
     }
 
     static string Menu()
     {
-        
+
         Console.Clear();
         Console.WriteLine("--------------------------------------------------------------------");
         Console.WriteLine("                       Welcome To Craft Mine");
@@ -115,10 +114,10 @@
         Location starterLocation = World.LocationByID(1);
         Console.Write($"\n     Starter Location = {starterLocation.Name}");
 
-        
+
         Console.Write("\nPress Enter");
         Console.ReadLine();
-        return new Player(playerName,HP,HP,BaseDamage,starterWeapon,starterLocation);
+        return new Player(playerName, HP, HP, BaseDamage, starterWeapon, starterLocation);
 
     }
 }
